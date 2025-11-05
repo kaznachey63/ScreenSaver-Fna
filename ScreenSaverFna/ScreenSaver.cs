@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
-using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
 
 namespace ScreenSaverFna
 {
-    public class ScreenSaver : Microsoft.Xna.Framework.Game
+    /// <summary>
+    /// Основной класс программы
+    /// </summary>
+    public class ScreenSaver : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch = null!;
-        Texture2D image = null!;
+        private readonly GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch = null!;
+        private Core core = null!;
 
-        public ScreenSaver() //This is the constructor, this function is called whenever the game class is created.
+        public ScreenSaver() 
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
@@ -42,7 +38,7 @@ namespace ScreenSaverFna
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            image = Content.Load<Texture2D>("snowflake.png");
+            core = new(graphics, Content);
         }
 
         /// <summary>
@@ -54,6 +50,7 @@ namespace ScreenSaverFna
         {
             //Update the things FNA handles for us underneath the hood:
             base.Update(gameTime);
+            core.OffsetSnowflake();
         }
 
         /// <summary>
@@ -65,8 +62,10 @@ namespace ScreenSaverFna
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            spriteBatch.Draw(image, new Vector2(0, 0), Color.White);
+            core.ShowBg(spriteBatch);
+            core.ShowSnoflakes(spriteBatch);
             spriteBatch.End();
+
             //Draw the things FNA handles for us underneath the hood:
             base.Draw(gameTime);
         }

@@ -1,6 +1,4 @@
-﻿using Microsoft.Xna.Framework;
-
-namespace ScreenSaverFna
+﻿namespace ScreenSaverFna
 {
     static class Program
     {

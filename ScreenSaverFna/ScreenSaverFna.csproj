@@ -23,9 +23,18 @@
 
 	
   <ItemGroup>
+    <None Update="Content\cherry.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Content\snowflake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+
+	
+  <ItemGroup>
+    <Folder Include="Utilities\" />
   </ItemGroup>
 	
 	
