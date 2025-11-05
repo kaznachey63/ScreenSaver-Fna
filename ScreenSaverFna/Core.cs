@@ -21,7 +21,7 @@ namespace ScreenSaverFna
             sf = content.Load<Texture2D>("snowflake.png");
             bg = content.Load<Texture2D>("cherry.jpg");
 
-            GenerateSnowflakes(100);
+            GenerateSnowflakes(Constants.NumberOfSNowflake);
         }
 
         /// <summary>
@@ -32,8 +32,8 @@ namespace ScreenSaverFna
         {
             for (int i = 0; i < amount; i++)
             {
-                int newDX = random.Next(0, graphics.PreferredBackBufferWidth);
-                int newDY = random.Next(-graphics.PreferredBackBufferHeight, -10);
+                int newDX = random.Next(0, Constants.WindowWidth);
+                int newDY = random.Next(-Constants.WindowHeight, -10);
                 int speed = random.Next(25, 75);
 
                 Snowflake snowflake = new Snowflake
@@ -42,8 +42,8 @@ namespace ScreenSaverFna
                     Speed = speed,
                     X = newDX,
                     Y = newDY,
-                    Width = 35,
-                    Height = 35,
+                    Width = Constants.SnowflakeWidth,
+                    Height = Constants.SnowflakeHeight,
                     Color = Color.White,
                 };
 

@@ -17,8 +17,8 @@ namespace ScreenSaverFna
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            graphics.PreferredBackBufferWidth = 1200;
-            graphics.PreferredBackBufferHeight = 720;
+            graphics.PreferredBackBufferWidth = Constants.WindowWidth;
+            graphics.PreferredBackBufferHeight = Constants.WindowHeight;
             graphics.IsFullScreen = false;
             graphics.ApplyChanges();
         }
