@@ -20,8 +20,12 @@
     </Reference>
   </ItemGroup>
 
+
+	
   <ItemGroup>
-    <Folder Include="Content\" />
+    <None Update="Content\snowflake.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 	
 	

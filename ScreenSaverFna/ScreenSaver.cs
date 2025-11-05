@@ -14,11 +14,17 @@ namespace ScreenSaverFna
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch = null!;
+        Texture2D image = null!;
 
         public ScreenSaver() //This is the constructor, this function is called whenever the game class is created.
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferWidth = 1200;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.IsFullScreen = false;
+            graphics.ApplyChanges();
         }
 
         /// <summary>
@@ -36,6 +42,7 @@ namespace ScreenSaverFna
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            image = Content.Load<Texture2D>("snowflake.png");
         }
 
         /// <summary>
@@ -57,6 +64,9 @@ namespace ScreenSaverFna
             //This will clear what's on the screen each frame, if we don't clear the screen will look like a mess:
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            spriteBatch.Begin();
+            spriteBatch.Draw(image, new Vector2(0, 0), Color.White);
+            spriteBatch.End();
             //Draw the things FNA handles for us underneath the hood:
             base.Draw(gameTime);
         }
