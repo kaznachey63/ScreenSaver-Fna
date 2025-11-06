@@ -32,9 +32,9 @@ namespace ScreenSaverFna
         {
             for (int i = 0; i < amount; i++)
             {
-                int newDX = random.Next(0, Constants.WindowWidth);
-                int newDY = random.Next(-Constants.WindowHeight, -10);
-                int speed = random.Next(25, 75);
+                int newDX = random.Next(Constants.MinNumberForNewDx, Constants.WindowWidth);
+                int newDY = random.Next(-Constants.WindowHeight, Constants.MaxNumberForNewDy);
+                int speed = random.Next(Constants.MinValueForSpeed, Constants.MaxValueForSpeed);
 
                 Snowflake snowflake = new Snowflake
                 {
@@ -69,7 +69,7 @@ namespace ScreenSaverFna
         /// <param name="spriteBatch"></param>
         public void ShowBg(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(bg, new Rectangle(0, 0, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);  //.Draw(image, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(bg, new Rectangle(Constants.DxForBg, Constants.DyForBg, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);  //.Draw(image, new Vector2(0, 0), Color.White);
         }
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace ScreenSaverFna
 
                 if (newDY > graphics.PreferredBackBufferHeight)
                 {
-                    newDY = random.Next(-100, -20);
-                    DX = random.Next(0, graphics.PreferredBackBufferWidth);
+                    newDY = random.Next(Constants.MinNumberForNewDy, Constants.MaxNumberForNewDy);
+                    DX = random.Next(Constants.MinNumberForDx, graphics.PreferredBackBufferWidth);
                 }
 
                 snowflake.X = DX;

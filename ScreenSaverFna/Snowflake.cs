@@ -8,9 +8,7 @@ namespace ScreenSaverFna
     /// </summary>
     public class Snowflake
     {
-        public Snowflake()
-        {
-        }
+        public Snowflake() { }
 
         /// <summary>
         /// Картинка снежинки
@@ -45,7 +43,7 @@ namespace ScreenSaverFna
         /// <summary>
         /// Прямоугольник для отображения снежинки
         /// </summary>
-        public Rectangle Rectangle => new Rectangle(X, Y, Width, Height);
+        public Rectangle Rectangle => new (X, Y, Width, Height);
 
         /// <summary>
         /// Цвет фона для отображения снежинки

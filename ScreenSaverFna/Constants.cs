@@ -28,5 +28,27 @@
         public const int SnowflakeHeight = 35;
 
 
+        public const int MaxNumberForNewDy = -10;
+
+
+        public const int MinNumberForNewDy = -100;
+
+
+        public const int MinNumberForNewDx = 0;
+
+        
+        public const int MinNumberForDx = 0;
+
+        
+        public const int MinValueForSpeed = 25;
+
+
+        public const int MaxValueForSpeed = 75;
+
+
+        public const int DxForBg = 0;
+        
+        
+        public const int DyForBg = 0;
     }
 }
