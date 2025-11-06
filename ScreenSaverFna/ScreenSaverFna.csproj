@@ -12,6 +12,12 @@
 	  </PostBuildEvent>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Utilities\**" />
+    <EmbeddedResource Remove="Utilities\**" />
+    <None Remove="Utilities\**" />
+  </ItemGroup>
+
 
 	
   <ItemGroup>
@@ -29,12 +35,6 @@
     <None Update="Content\snowflake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-
-
-	
-  <ItemGroup>
-    <Folder Include="Utilities\" />
   </ItemGroup>
 	
 	
