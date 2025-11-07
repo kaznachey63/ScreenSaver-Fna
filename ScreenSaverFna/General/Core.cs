@@ -23,7 +23,7 @@ namespace ScreenSaverFna.General
             sf = content.Load<Texture2D>("snowflake.png");
             bg = content.Load<Texture2D>("cherry.jpg");
 
-            GenerateSnowflakes(Constants.NumberOfSNowflake);
+            GenerateSnowflakes(Constants.NumberOfSnowflake);
         }
 
         /// <summary>
@@ -56,7 +56,6 @@ namespace ScreenSaverFna.General
         /// <summary>
         /// Отображение снежинок
         /// </summary>
-        /// <param name="spriteBatch"></param>
         public void ShowSnoflakes(SpriteBatch spriteBatch)
         {
             foreach (var snowflake in snowflakes)
@@ -68,7 +67,6 @@ namespace ScreenSaverFna.General
         /// <summary>
         /// Отображение заднего фона
         /// </summary>
-        /// <param name="spriteBatch"></param>
         public void ShowBg(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(bg, new Rectangle(Constants.DxForBg, Constants.DyForBg, graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight), Color.White);  //.Draw(image, new Vector2(0, 0), Color.White);
