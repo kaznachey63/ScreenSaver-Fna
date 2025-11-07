@@ -1,11 +1,14 @@
 ﻿namespace ScreenSaverFna.Additions
 {
+    /// <summary>
+    /// Класс для констант
+    /// </summary>
     public class Constants
     {
         /// <summary>
         /// Количество генерируемых снежинок
         /// </summary>
-        public const int NumberOfSNowflake = 100;
+        public const int NumberOfSnowflake = 100;
 
         /// <summary>
         /// Ширина окна
