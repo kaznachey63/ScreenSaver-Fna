@@ -8,8 +8,6 @@ namespace ScreenSaverFna.Models
     /// </summary>
     public class Snowflake
     {
-        public Snowflake() { }
-
         /// <summary>
         /// Картинка снежинки
         /// </summary>
